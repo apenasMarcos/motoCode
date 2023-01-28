@@ -9,7 +9,7 @@ public class Usuario {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
-    @Column(name="nome_completo", length = 200, nullable = false)
+    @Column(name="nome", length = 200, nullable = false)
     private String nome;
     @Column(name="email", length = 50, nullable = false)
     private String email;
