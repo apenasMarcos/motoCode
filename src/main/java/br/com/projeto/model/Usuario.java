@@ -8,8 +8,8 @@ public class Usuario {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private String id;
-    @Column(name="nome", length = 200, nullable = false)
+    private Long id;
+    @Column(name="nome_completo", length = 200, nullable = false)
     private String nome;
     @Column(name="email", length = 50, nullable = false)
     private String email;
@@ -18,11 +18,11 @@ public class Usuario {
     @Column(name="telefone", columnDefinition = "TEXT", length = 15, nullable = false)
     private String telefone;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
