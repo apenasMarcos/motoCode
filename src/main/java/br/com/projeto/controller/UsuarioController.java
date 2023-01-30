@@ -18,21 +18,22 @@ public class UsuarioController {
 
     @GetMapping
     public ResponseEntity<List<Usuario>> usuario(){
-     return usuarioService.listarUsuarios();
+     return ResponseEntity.status(200).body(usuarioService.listarUsuarios());
     }
 
     @PostMapping
     public ResponseEntity<Usuario> cadastrarUsuario(@RequestBody Usuario usuario){
-         return usuarioService.cadastrarUsuario(usuario);
+         return ResponseEntity.status(201).body(usuarioService.cadastrarUsuario(usuario));
     }
 
     @PutMapping
     public ResponseEntity<Usuario> editarUsuario(@RequestBody Usuario usuario){
-        return usuarioService.editarUsuario(usuario);
+        return ResponseEntity.status(201).body(usuarioService.editarUsuario(usuario));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> excluirUsuario(@PathVariable Long id){
-        return usuarioService.excluirUsuario(id);
+        usuarioService.excluirUsuario(id);
+        return ResponseEntity.status(204).build();
     }
 }
