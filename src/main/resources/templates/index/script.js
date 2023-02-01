@@ -12,7 +12,7 @@ formulario.addEventListener('submit', function (event){
 });
 
 function  cadastrar(){
-    fetch("http://localhost:8080/cadastrar", {
+    fetch("http://localhost:8080/usuarios", {
         method: "POST",
         headers: { "Content-type": "application/json;charset=UTF-8"},
         body: JSON.stringify({
